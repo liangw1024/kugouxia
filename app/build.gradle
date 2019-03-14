@@ -1,0 +1,166 @@
+apply plugin: 'com.android.application'
+
+android {
+    // //如果是构建debug包, 则禁用 "png cruncher" (默认cruncherEnabled=true, 禁用以加速构建)
+    def enableCruncher = { -> return !isDebug() }
+    //禁用cruncher, 以加速编译
+    aaptOptions {
+        cruncherEnabled = enableCruncher()
+        cruncherProcesses = 0
+    }
+    //跳过Lint和Test相关的task, 以加速编译
+    if (isDebug()) {
+        gradle.taskGraph.whenReady {
+            tasks.each { task ->
+                if (task.name.contains("Test") || task.name.contains("Lint")) {
+                    task.enabled = false
+                }
+            }
+        }
+    }
+    dexOptions {
+        maxProcessCount 8
+        javaMaxHeapSize "2g"
+        dexInProcess true
+        preDexLibraries true
+    }
+    compileOptions {
+        //开启增量编译
+        incremental = true
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword 'x2887665'
+            storeFile file('E:/AppProject/kgxRelease.keystore')
+            storePassword 'x2887665'
+        }
+
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.liangwei.kugouxia"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "test-1.931 不忘初心"
+//        ndk {
+//            //选择要添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', "x86"
+//            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+        multiDexEnabled false
+        signingConfig signingConfigs.config
+
+    }
+    buildTypes {
+        packagingOptions {
+            exclude 'META-INF/DEPENDENCIES'
+            exclude 'META-INF/NOTICE'
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/LICENSE.txt'
+            exclude 'META-INF/NOTICE.txt'
+            exclude 'META-INF/ASL2.0'
+            exclude 'META-INF/notice.txt'
+        }
+        release {
+            crunchPngs false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+
+            crunchPngs false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+    sourceSets { main { jni.srcDirs = ['src/main/jni', 'src/main/jni/'] } }
+    productFlavors {
+    }
+    buildToolsVersion '28.0.3'
+}
+//apply plugin: 'replugin-host-gradle'
+//
+//afterEvaluate {
+//    tasks.matching {
+//        it.name.startsWith('dex')
+//    }.each { dx ->
+
+//        def listFile = project.rootDir.absolutePath+'/app/maindexlist.txt'
+//        if (dx.additionalParameters == null) {
+//            dx.additionalParameters = []
+//        }
+//        //表示当方法数越界时则生成多个dex文件（我的没有越界，貌似也生成了两个）
+//        dx.additionalParameters += '--multi-dex'
+//        //这个指定了listFile中的类（即maindexlist.txt中的类）会打包到主dex中，不过注意下一条。
+//        dx.additionalParameters += '--main-dex-list=' +listFile
+//        //表明只有-main-dex-list所指定的类（在我的配置中，就是app目录下的maindexlist.txt中包含的类）才能打包到主dex中，如果没有这个选项，上个选项就会失效
+//        dx.additionalParameters += '--minimal-main-dex'
+//    }
+//}
+//repluginHostConfig {
+//    useAppCompat = true
+//}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    /*
+                  ------> UI
+                 */
+    implementation 'com.zhihu.android:matisse:0.4.3'
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+
+    implementation 'hanks.xyz:htextview-library:+'
+    //compile 'com.android.support:multidex:1.0.0'
+    //implementation 'com.aliyun.oss:aliyun-sdk-oss:2.8.3'
+    implementation 'com.jrummyapps:colorpicker:2.1.6'
+    implementation 'com.leon:lsettingviewlibrary:+'
+
+
+    implementation 'com.github.jdsjlzx:LRecyclerView:1.5.4.1'
+
+    implementation 'pub.devrel:easypermissions:0.4.0'
+    implementation 'cn.jzvd:jiaozivideoplayer:6.2.7'
+    implementation 'com.pgyersdk:sdk:2.8.1'
+
+    //compile 'com.qihoo360.replugin:replugin-host-lib:2.2.4'
+    implementation 'com.arialyy.aria:Aria:+'
+    implementation 'com.alibaba:fastjson:+'
+    implementation 'com.github.kevinsawicki:http-request:+'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.youth.banner:banner:+'
+    implementation 'com.jpeng:JPTabBar:+'
+    implementation 'com.rengwuxian.materialedittext:library:+'
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    implementation 'cn.bmob.android:http-legacy:1.0'
+    implementation 'cn.bmob.android:http-legacy:1.0'
+    implementation 'cn.bmob.android:bmob-sdk:3.5.5'
+    implementation 'cn.bmob.android:bmob-push:0.8'
+
+    implementation 'com.jakewharton:butterknife:+'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:+'
+
+    testImplementation 'junit:junit:4.12'
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation files('libs/tx_tbs.jar')
+    implementation files('libs/qqwidget.jar')
+    implementation files('libs/opensdk.jar')
+    implementation files('libs/showapi_sdk.jar')
+    implementation project(':lwstudio')
+}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/about_activity_appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/about_activity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:title="伟宝网络传媒"
+            app:titleTextColor="#fafafa"
+            app:subtitle="我一直用心在做"
+            app:subtitleTextColor="#ffffff"
+            android:fitsSystemWindows="true"
+            app:navigationIcon="@mipmap/ic_back_white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.liangwei.kugouxia.frame.CustomView.CircleImageView
+            android:id="@+id/about_activity_img_head"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:src="@mipmap/app_logo" />
+
+        <TextView
+            android:id="@+id/about_activityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_activity_img_head"
+            android:layout_centerHorizontal="true"
+            android:shadowColor="#3B6ED3"
+            android:shadowDx="1.0"
+            android:shadowDy="4.0"
+            android:shadowRadius="3.0"
+            android:text="酷狗侠"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textScaleX="1.1" />
+
+        <com.liangwei.kugouxia.frame.CustomView.PrinterTextView
+            android:id="@+id/about_activity_printerTextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_activityTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_activity_printerTextview"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/about_activity_btn_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="意见反馈"
+                android:textColor="#00CCFF" />
+
+            <Button
+                android:id="@+id/about_activity_btn_CheckUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="检测更新"
+                android:textColor="#00CCFF" />
+
+            <Button
+                android:id="@+id/about_activity_btn_contactMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="联系客服"
+                android:textColor="#00CCFF" />
+
+            <Button
+                android:id="@+id/about_activity_btn_joinQQGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加入用户QQ群"
+                android:textColor="#00CCFF" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:text="Copyright © 2017 千度网络传媒 all rights reserved" />
+
+    </RelativeLayout>
+
+</LinearLayout>

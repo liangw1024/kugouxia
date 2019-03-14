@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    xmlns:jp="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activity_videoParse_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+
+        android:fitsSystemWindows="true"        android:background="@color/colorPrimaryDark"
+        app:titleTextColor="#4e4e4e"
+        app:title="快手视频下载"/>
+    <View
+        android:id="@+id/activity_video_parse_division"
+        android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:layout_below="@id/activity_videoParse_toolbar"
+        android:background="#969696"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_video_parse_division">
+        <EditText
+            android:id="@+id/activity_videoParse_et_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="请输入你要下载的快手视频链接" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/activity_videoParse_btn_parse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_videoParse_et_url"
+            android:layout_centerHorizontal="true"
+            android:text="开始解析" />
+
+        <cn.jzvd.JZVideoPlayerStandard
+            android:id="@+id/activity_videoParse_jzvideo"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@id/activity_videoParse_btn_parse"  />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/activity_videoParse_btn_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_videoParse_jzvideo"
+            android:layout_centerHorizontal="true"
+            android:text="下载视频到快手本地作品集"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

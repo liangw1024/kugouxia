@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/dialog_set_flash_light_speed_et_value"
+        app:layout_widthPercent="55%"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3px"
+        app:layout_marginLeftPercent="8%"
+        android:text="500"
+        android:inputType="number"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="单位（毫秒）" />
+</androidx.percentlayout.widget.PercentRelativeLayout>

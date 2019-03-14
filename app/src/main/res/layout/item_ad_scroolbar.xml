@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_ad_scroolbar_relativeLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="80dp"
+    android:minHeight="80dp">
+
+    <TextView
+        android:id="@+id/item_ad_scroolbar_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="title"
+        android:textSize="40px"
+        android:textColor="#ffc164"/>
+    <TextView
+        android:id="@+id/item_ad_scroolbar_tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_ad_scroolbar_tv_title"
+
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="2dp"
+        android:text="description"
+        android:textSize="11dp"/>
+
+    <ImageView
+        android:id="@+id/item_ad_scroolbar_iv"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_target_hot" />
+
+</RelativeLayout>

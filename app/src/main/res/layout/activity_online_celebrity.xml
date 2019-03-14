@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activity_online_celebrity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:navigationIcon="@mipmap/ic_back_white"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="网红必备"
+        app:titleTextColor="#ffffff" />
+
+    <RelativeLayout
+        android:id="@+id/activity_online_celebrity_relativelayout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_online_celebrity_toolbar"
+        android:background="@color/colorPrimary">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="#58b4ff"
+            app:cardCornerRadius="13dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.liangwei.kugouxia.frame.CustomView.CircleImageView
+                    android:id="@+id/activity_online_celebrity_iv_logo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@mipmap/app_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/activity_online_celebrity_iv_logo"
+                    android:text="Lw Studio"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_toRightOf="@id/activity_online_celebrity_iv_logo"
+                    android:text="因为有你所以精彩"
+                    android:textColor="#297ec3" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_online_celebrity_relativelayout_top"
+        android:orientation="vertical"
+        android:background="#f5f5f5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_online_celebrity_btn_led"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_led"
+                app:tb_text="LED字幕"
+                app:tb_textColor="#2cb5ff" />
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_online_celebrity_btn_loversHeadMatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_lovers_head"
+                app:tb_text="情头匹配"
+                app:tb_textColor="#ea6868" />
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_online_celebrity_btn_analogVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_analog_video_call"
+                app:tb_text="模拟视频"
+                app:tb_textColor="#5ca2ff" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_online_celebrity_btn_character"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_ascii_img"
+                app:tb_text="图片转文字"
+                app:tb_textColor="#f40000" />
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_online_celebrity_btn_writeCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_write_code"
+                app:tb_text="假装写代码"
+                app:tb_textColor="#f40000" />
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_online_celebrity_btn_numRain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_number_rain"
+                app:tb_text="黑客数字雨"
+                app:tb_textColor="#f40000" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#c0c0c0" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/activity_online_celebrity_card_zhuangbi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#1fd449"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_online_celebrity_tv_zhuangbi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:text="装逼神器"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/activity_online_celebrity_tv_zhuangbi"
+                    android:layout_below="@id/activity_online_celebrity_tv_zhuangbi"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="2dp"
+                    android:text="-- 集各种装逼 于一身的优秀网站"
+                    android:textColor="#ffffff"
+                    android:textSize="10dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@mipmap/ic_zhuangbi" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/activity_online_celebrity_card_zxing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#ff7159"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_online_celebrity_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:text="二维码制作"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/activity_online_celebrity_tv"
+                    android:layout_below="@id/activity_online_celebrity_tv"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="2dp"
+                    android:text="-- 制作多功能的二维码"
+                    android:textColor="#ffffff"
+                    android:textSize="10dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@mipmap/ic_make_zxing" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_marginLeftPercent="20%"
+                app:layout_marginRightPercent="20%">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="35px"
+                    app:contentPaddingTop="5px"
+                    app:contentPaddingBottom="5px"
+                    app:cardBackgroundColor="#ffffff"
+                    app:cardCornerRadius="30px"
+                    app:cardElevation="2px">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.liangwei.studio.ui.btn.FloatingButtonsItem
+                            android:id="@+id/activity_online_celebrity_fbi_express"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40px"
+                            app:fbi_imgWidth="45px"
+                            app:fbi_imgHeight="45px"
+                            app:fbi_img="@mipmap/ic_fbi_express"
+                            app:fbi_text="表白神器"
+                            app:fbi_textColor="@color/colorPrimary"
+                            app:fbi_textMarginTop="2px"
+                            app:fbi_textSize="9px" />
+                        <com.liangwei.studio.ui.btn.FloatingButtonsItem
+                            android:id="@+id/activity_online_celebrity_fbi_flashLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            app:fbi_imgWidth="45px"
+                            app:fbi_imgHeight="45px"
+                            app:fbi_img="@mipmap/ic_fbi_flash_light"
+                            app:fbi_text="极速闪光"
+                            app:fbi_textColor="@color/colorPrimary"
+                            app:fbi_textMarginTop="2px"
+                            app:fbi_textSize="9px"/>
+                        <com.liangwei.studio.ui.btn.FloatingButtonsItem
+                            android:id="@+id/activity_online_celebrity_fbi_spoof"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="40px"
+                            app:fbi_imgWidth="45px"
+                            app:fbi_imgHeight="45px"
+                            app:fbi_img="@mipmap/ic_fbi_spoof"
+                            app:fbi_text="恶搞朋友"
+                            app:fbi_textColor="@color/colorPrimary"
+                            app:fbi_textMarginTop="2px"
+                            app:fbi_textSize="9px"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

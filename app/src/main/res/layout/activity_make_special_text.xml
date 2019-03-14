@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_make_special_text_appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_make_special_text_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:fitsSystemWindows="true"
+            app:navigationIcon="@mipmap/ic_back_white"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="制作特殊文本"
+            app:titleTextColor="#ffffff" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/activity_make_special_text_et_src"
+        app:layout_widthPercent="40%"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_make_special_text_appbarLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:hint="请输入需要制作的文本"
+        android:textSize="13dp"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="文本" />
+
+    <Button
+        android:id="@+id/activity_make_special_text_btn_make"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_make_special_text_et_src"
+        android:layout_centerHorizontal="true"
+        android:text="制作"
+        android:textColor="#ffffff" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_make_special_text_btn_make">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_huaten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="花藤文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="带圈文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_me"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="me文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_daiCi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="带刺文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_xin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="心文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="删除文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_border"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="边框文字" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_juhua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="菊花文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_diamond"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="菱形文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_ban"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="禁止文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_stick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="小棒文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_capsule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="胶囊文字" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_king"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="king" />
+                <com.liangwei.kugouxia.frame.CustomView.ClickCopyTextView
+                    android:id="@+id/activity_make_special_text_tv_wing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_et"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="翅膀wing" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.percentlayout.widget.PercentRelativeLayout>
+

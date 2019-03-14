@@ -1,0 +1,183 @@
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/fragment_home_relativeLayout_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/fragment_home_textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="酷狗侠"
+            android:textColor="#4C4C4C"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/fragment_home_textView_rightTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="7dp"
+            android:layout_marginRight="4dp"
+            android:text="官方群"
+            android:textColor="#3B3B3B"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/fragment_home_view_division"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/fragment_home_relativeLayout_toolbar"
+        android:background="#969696" />
+
+    <TextView
+        android:id="@+id/fragment_home_tv_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_home_view_division"
+        app:layout_marginTopPercent="2%"
+        android:text="公告：软件目前bug多 如有问题请联系客服"
+        android:textSize="25px"/>
+
+    <com.youth.banner.Banner
+        android:id="@+id/fragment_home_banner"
+        app:layout_widthPercent="92%"
+        app:layout_heightPercent="20%"
+        app:layout_marginTopPercent="2%"
+        android:layout_below="@id/fragment_home_tv_notice"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:elevation="50dp"
+        app:image_scale_type="fit_xy" />
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_home_banner"
+        app:layout_marginTopPercent="5%">
+
+        <LinearLayout
+            android:id="@+id/fragment_home_percentRelativeLayout_tools_one"
+            android:layout_width="match_parent"
+            app:layout_heightPercent="37%"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <com.liangwei.kugouxia.frame.CustomView.KgxCardView
+                android:id="@+id/fragment_home_kgxcardview_translate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.0"
+                app:kg_division_bg="@drawable/line_bg_blue"
+                app:kg_image="@mipmap/home_tb_youhui"
+                app:kg_text="一个酷译"
+                app:kg_textColor="#fd5dea" />
+
+            <com.liangwei.kugouxia.frame.CustomView.KgxCardView
+                android:id="@+id/fragment_home_kgxcardview_yellowVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.0"
+                app:kg_division_bg="@drawable/line_bg_blue"
+                app:kg_image="@mipmap/home_yellow_video"
+                app:kg_text="网红壁纸"
+                app:kg_textColor="#fd5dea" />
+
+            <com.liangwei.kugouxia.frame.CustomView.KgxCardView
+                android:id="@+id/fragment_home_kgxcardview_makeSpecialName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.0"
+                app:kg_division_bg="@drawable/line_bg_blue"
+                app:kg_image="@mipmap/home_special_text"
+                app:kg_text="QQ特殊网名"
+                app:kg_textColor="#fd5dea" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/fragment_home_tools_division"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/fragment_home_percentRelativeLayout_tools_one"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/division_bg_gradient" />
+
+        <LinearLayout
+            android:id="@+id/fragment_home_percentRelativeLayout_tools_two"
+            android:layout_width="match_parent"
+            app:layout_heightPercent="37%"
+            android:layout_below="@id/fragment_home_tools_division"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <com.liangwei.kugouxia.frame.CustomView.KgxCardView
+                android:id="@+id/fragment_home_kgxcardview_qqmeihua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.0"
+                app:kg_division_bg="@drawable/line_bg_blue"
+                app:kg_image="@mipmap/home_qq_meihua"
+                app:kg_text="美Q"
+                app:kg_textColor="#df6666" />
+
+            <com.liangwei.kugouxia.frame.CustomView.KgxCardView
+                android:id="@+id/fragment_home_kgxcardview_xianbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.0"
+                app:kg_division_bg="@drawable/line_bg_blue"
+                app:kg_image="@mipmap/home_xianbao"
+                app:kg_text="简报"
+                app:kg_textColor="#df6666" />
+
+            <com.liangwei.kugouxia.frame.CustomView.KgxCardView
+                android:id="@+id/fragment_home_kgxcardview_vipVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.0"
+                app:kg_division_bg="@drawable/line_bg_blue"
+                app:kg_image="@mipmap/home_free_video"
+                app:kg_text="免费看电影"
+                app:kg_textColor="#df6666" />
+        </LinearLayout>
+
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

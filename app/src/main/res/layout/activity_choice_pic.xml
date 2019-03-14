@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/activity_choice_relativeLayout_toolbar"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/activity_choice_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabTextColor="#787878"
+            app:tabSelectedTextColor="#292929"
+            app:tabMode="scrollable"
+            app:tabGravity="center">
+
+        </com.google.android.material.tabs.TabLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/activity_choice_division"
+        android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:layout_below="@id/activity_choice_relativeLayout_toolbar"
+        android:background="#969696"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activity_choice_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_choice_division">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</RelativeLayout>

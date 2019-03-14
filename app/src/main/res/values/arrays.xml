@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="list_painting_quality_update">
+    <item>低端机专属画质</item>
+    <item>中端机2k鲜艳画质</item>
+    <item>高端机2k写实极限画质</item>
+</string-array>
+</resources>

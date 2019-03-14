@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menu_x5_webview_openUrl"
+        android:title="浏览器打开链接"
+        android:icon="@mipmap/browser"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>

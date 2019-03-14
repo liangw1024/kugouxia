@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liangwei.kugouxia">
+
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 允许程序录制音频 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 可选 -->
+    <uses-permission android:name="android.permission.READ_LOGS" /> <!-- 获取logcat日志 -->
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 在sdcard中创建/删除文件的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:name="com.liangwei.kugouxia.KuGouApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.liangwei.kugouxia.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.liangwei.kugouxia.KuGouMainActivity" />
+        <activity
+            android:name="com.liangwei.kugouxia.frame.tbs.X5Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/title_activity_x5"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="com.liangwei.kugouxia.browser" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.smtt.sdk.VideoActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.tencent.smtt.tbs.video.PLAY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.pgyersdk.activity.FeedbackActivity" />
+
+        <meta-data
+            android:name="PGYER_APPID"
+            android:value="d442db3ad00315165d88c1144e47a4da" />
+
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.XianBaoActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.AboutActivity"
+            android:label="伟宝网络传媒"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.XianBaoDetailActivity"
+            android:label="@string/title_activity_xian_bao_detail"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.frame.ShowImageActivity"
+            android:label="@string/title_activity_show_image"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.MakeHeadActivity"
+            android:label="@string/title_activity_make_head"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+
+        <service
+            android:name="com.liangwei.kugouxia.ui.activity.tools.AutoClickRedPacketService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/auto_click_red_packet_info" />
+        </service>
+
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.QqMeiHuaActivity"
+            android:label="@string/title_activity_qq_mei_hua"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.QqMeihuaDetailActivity"
+            android:label="@string/title_activity_qq_meihua_detail"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.frame.PlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/title_activity_player"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.QqCardMessageActivity"
+            android:label="@string/title_activity_qq_card_message"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 以下是QQ和Qzone分享相关配置 -->
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="1106836060" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.ChoicePicAcitvity"
+            android:label="@string/title_activity_choice"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.MakeSpecialTextActivity"
+            android:label="@string/title_activity_make_special_text"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="kgx_makeSpecialTextActivity" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.led.MakeLedActivity"
+            android:label="@string/title_activity_make_led"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.led.ShowLedActivity"
+            android:label="@string/title_activity_show_led"
+            android:screenOrientation="landscape"
+            android:theme="@style/NoActionBarStatesBar" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.AnalogVideoCall.AnalogVideoCallActivity"
+            android:label="@string/title_activity_analog_video_call"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.AnalogVideoCall.AnalogVideoActivity"
+            android:label="@string/title_activity_analog_video"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.ImageToAsciiActivity"
+            android:label="@string/title_activity_image_to_ascii"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.PaintingQualityUpdateActivity"
+            android:label="@string/title_activity_painting_quality_update"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.MakeAcrosticActivity"
+            android:label="@string/title_activity_make_acrostic"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.tools.CoolTranslateActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.classify.OnlineCelebrityActivity"
+            android:label="@string/title_activity_online_celebrity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.liangwei.kugouxia.ui.activity.classify.qqtools.QqToolActivity"
+            android:label="@string/title_activity_qq_tool"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".ui.activity.classify.MakeCelebrityOnlinePictureActivity"
+            android:label="none"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_qq_card_sort_time_new"
+        android:title="时间升序(旧的—新的)"
+        app:showAsAction="never" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_qq_card_sort_time_old"
+        android:title="时间降序(新的—旧的)"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_qq_card_sort_time_random"
+        android:title="随机"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_qq_card_sort_time_back_position"
+        android:title="回到上一次的浏览位置"
+        app:showAsAction="never" />
+</menu>

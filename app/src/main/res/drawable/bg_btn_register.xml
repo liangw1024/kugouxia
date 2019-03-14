@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape  android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:startColor="#04AAFF"
+                android:endColor="#73D0FF"
+                android:angle="270"/>
+            <corners
+                android:bottomRightRadius="10dip"
+                android:bottomLeftRadius="10dip"
+                android:topLeftRadius="10dip"
+                android:topRightRadius="10dip"/>
+
+            <!--<stroke android:width="3sp" android:color="#00388af5" />-->
+            <!--&lt;!&ndash; 边缘颜色 按钮四个圆角="" &ndash;&gt;-->
+            <!--<corners android:radius="18dp" />-->
+            <!-- 半径 内边距="" 按钮文字和边缘距离="" -->
+            <padding android:bottom="10dp" android:left="50dp" android:right="50dp" android:top="10dp" />
+        </shape>
+    </item>
+
+
+    <item>
+
+            <shape android:shape="rectangle" >
+                <gradient
+                    android:type="linear"
+                    android:startColor="#04AAFF"
+                    android:endColor="#73D0FF"
+                    android:angle="0"/>
+                <corners
+                    android:bottomRightRadius="10dip"
+                    android:bottomLeftRadius="10dip"
+                    android:topLeftRadius="10dip"
+                    android:topRightRadius="10dip"/>
+                <!--<stroke android:width="3sp" android:color="#00388af5" />-->
+                <!--&lt;!&ndash; 边缘颜色 按钮四个圆角="" &ndash;&gt;-->
+                <!--<corners android:radius="18dp" />-->
+                <!-- 半径 内边距="" 按钮文字和边缘距离="" -->
+                <padding android:bottom="10dp" android:left="50dp" android:right="50dp" android:top="10dp" />
+            </shape>
+
+    </item>
+
+</selector>

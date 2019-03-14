@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">酷狗侠</string>
+    <string name="copynight">\@Copynight 千度网络传媒 by-伟宝 2018-2018 </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="choose_color">选择颜色</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_x5">浏览器</string>
+    <string name="title_activity_video_parse">视频解析</string>
+    <string name="title_activity_xian_bao">XianBaoActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_my">MyActivity</string>
+    <string name="title_activity_qqcard">QQCardActivity</string>
+    <string name="title_activity_xian_bao_detail">详情</string>
+    <string name="title_activity_show_image">图片</string>
+    <string name="title_activity_make_head">MakeHeadActivity</string>
+    <string name="title_activity_query_qqmusic_my_love">QueryQQMusicMyLoveActivity</string>
+    <string name="auto_click_description">QQ 微信自动抢红包</string>
+    <string name="title_activity_computer_online">卡电脑在线</string>
+    <string name="title_activity_qq_mei_hua">QqMeiHuaActivity</string>
+    <string name="title_activity_qq_meihua">QqMeihua</string>
+    <string name="title_activity_qq_meihua_detail">QqMeihuaDetailActivity</string>
+    <string name="title_activity_player">PlayerActivity</string>
+    <string name="title_activity_qq_card_message">QqCardMessageActivity</string>
+    <string name="title_activity_yellow">YellowActivity</string>
+    <string name="title_activity_choice">Choice</string>
+    <string name="title_activity_make_special_text">制作特殊文字</string>
+    <string name="title_activity_make_led">MakeLedActivity</string>
+    <string name="title_activity_show_led">ShowLedActivity</string>
+    <string name="title_activity_analog_video_call">AnalogVideoCallActivity</string>
+    <string name="title_activity_analog_video">AnalogVideoActivity</string>
+    <string name="title_activity_image_to_ascii">ImageToAsciiActivity</string>
+    <string name="title_activity_painting_quality_update">绝地求生画质修改</string>
+    <string name="title_activity_make_acrostic">MakeAcrosticActivity</string>
+    <string name="title_activity_online_celebrity">OnlineCelebrity</string>
+    <string name="title_activity_qq_tool">QQ工具</string>
+
+    <string name="behavior_scroll_up_hide">com.liangwei.kugouxia.behavior.ScrollUpHideBehavior</string>
+</resources>

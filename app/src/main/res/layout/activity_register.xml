@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.liangwei.kugouxia.frame.CustomView.VideoBackgroundView
+        android:id="@+id/activity_register_videoBackgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ar_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        app:cardBackgroundColor="#70ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="注册"
+                    android:textColor="#38c0ff"
+                    android:textSize="28dp"
+                    android:layout_marginBottom="50dp"/>
+                <View
+                    android:background="#ff0000"
+                    android:layout_width="7dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/activity_register_met_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:hint="请输入你的账号"
+                android:lines="1"
+                app:met_autoValidate="true"
+                app:met_baseColor="#ffffff"
+                app:met_clearButton="true"
+                app:met_errorColor="#f50000"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="账号"
+                app:met_helperText="请输入6-11位 账号"
+                app:met_helperTextAlwaysShown="true"
+                app:met_iconPadding="2dp"
+                app:met_maxCharacters="11"
+                app:met_primaryColor="#54b0f7"
+                app:met_singleLineEllipsis="false" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/activity_register_met_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_register_met_account"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="10dp"
+                android:lines="1"
+                android:hint="请输入你的密码"
+                app:met_autoValidate="true"
+                app:met_baseColor="#ffffff"
+                app:met_clearButton="true"
+                app:met_errorColor="#f50000"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="密码"
+                app:met_helperText="请输入3-11位 密码"
+                app:met_helperTextAlwaysShown="true"
+                app:met_iconPadding="2dp"
+                app:met_maxCharacters="11"
+                app:met_primaryColor="#54b0f7"
+                app:met_singleLineEllipsis="false" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/activity_register_btn_register"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginRight="70dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="注册"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/bg_btn_register"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/activity_register_btn_forgetPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="6dp"
+                    android:text="忘记密码"
+                    android:textColor="#0090ff"
+                    android:background="#00000000"/>/>
+
+                <Button
+                    android:id="@+id/activity_register_btn_goLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:background="#00000000"
+                    android:text="已有账号"
+                    android:textColor="#ff1fe9" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+<TextView
+    android:textColor="#ffffff"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:text="@string/copynight"
+    android:shadowColor="#7000"
+    android:shadowDx="12"
+    android:shadowDy="12"
+    android:shadowRadius="8"/>
+</RelativeLayout>

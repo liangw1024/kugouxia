@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_cool_translate_appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_cool_translate_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:navigationIcon="@mipmap/ic_back_white"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="一个酷译"
+            app:titleTextColor="#ffffff"
+            android:fitsSystemWindows="true"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/activity_cool_translate_cardview"
+        android:layout_width="match_parent"
+        app:layout_heightPercent="27%"
+        android:layout_below="@id/activity_cool_translate_appbarLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="18dp"
+
+        android:elevation="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/activity_cool_translate_et_BeforeTranslate"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:gravity="top"
+                android:background="@null"
+                android:hint="请输入要翻译的文字"
+                android:textSize="30px"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="文本"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <RelativeLayout
+        android:id="@+id/activity_cool_translate_relativeLayout"
+        android:layout_width="wrap_content"
+        app:layout_heightPercent="10%"
+        android:layout_below="@id/activity_cool_translate_cardview"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp">
+        <Button
+          android:id="@+id/activity_cool_translate_btn_BeforeTranslateLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="45dp"
+            android:paddingRight="45dp"
+            android:background="@drawable/bg_btn_blue"
+            android:text="自动"
+            android:textColor="#ffffff"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/activity_cool_translate_fab_translate"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_translate"
+            app:backgroundTintMode="src_atop"
+            app:backgroundTint="#dc2eafff"/>
+
+        <Button
+            android:id="@+id/activity_cool_translate_btn_BehideTranslateLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="45dp"
+            android:paddingRight="45dp"
+            android:background="@drawable/bg_btn_red"
+            android:text="中文"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/activity_cool_translate_cardview_Translate"
+        android:layout_width="match_parent"
+        app:layout_heightPercent="17%"
+        android:layout_below="@id/activity_cool_translate_relativeLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="18dp"
+        android:elevation="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <TextView
+                android:id="@+id/activity_cool_translate_tv_translateOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="Translate output...."
+                android:textColor="#b9b9b9"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:id="@+id/activity_cool_translate_iv_copy"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@mipmap/ic_copy"/>
+
+                <ImageView
+                    android:id="@+id/activity_cool_translate_iv_pronunciation"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@mipmap/ic_pronunciation" />
+                <ImageView
+                    android:id="@+id/activity_cool_translate_iv_opposite"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="11dp"
+                    android:background="@mipmap/ic_opposite"/>
+                <ImageView
+                    android:id="@+id/activity_cool_translate_iv_share"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@mipmap/ic_share_gray"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

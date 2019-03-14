@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_make_head_appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_make_head_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:title="外卖头像生成"
+            app:titleTextColor="#ffffff"
+            app:navigationIcon="@mipmap/ic_back_white"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:fitsSystemWindows="true"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+   <ImageView
+       android:id="@+id/activity_make_head_iv_show"
+       android:layout_below="@id/activity_make_head_appbarlayout"
+       android:layout_centerHorizontal="true"
+       android:layout_width="110dp"
+       android:layout_height="110dp" />
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/activity_make_head_et_text"
+        android:layout_below="@id/activity_make_head_iv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:hint="请输入需要添加的文字"
+        app:met_clearButton="true"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="文字"
+        app:met_baseColor="#3b3b3b"
+        app:met_primaryColor="#5dd1ff"/>
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/activity_make_head_et_textsize"
+        android:layout_below="@id/activity_make_head_et_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:hint="请输入文字大小 默认60"
+        android:text="60"
+        app:met_clearButton="true"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Text Size"
+        app:met_baseColor="#3b3b3b"
+        app:met_primaryColor="#5dd1ff"/>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/activity_make_head_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_make_head_et_textsize"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <Button
+            android:id="@+id/activity_make_head_btn_save"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="保存"/>
+    </RelativeLayout>
+   <TextView
+       android:id="@+id/activity_make_head_tv_showChoose"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/activity_make_head_rv"
+       android:layout_marginLeft="5dp"
+       android:paddingLeft="20dp"
+       android:paddingRight="20dp"
+       android:text="请选择你的外卖"
+       android:textColor="#ffff"
+       android:background="#2785ff"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activity_make_rv_demo"
+        android:layout_below="@id/activity_make_head_tv_showChoose"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</RelativeLayout>

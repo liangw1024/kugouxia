@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liangwei.kugouxia.ui.activity.tools.QqCardMessageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_qq_card_message_appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_qq_card_message_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="QQ卡片消息"
+            app:titleTextColor="#ffffff"
+            app:navigationIcon="@mipmap/ic_back_white"
+            android:fitsSystemWindows="true"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_qq_card_message_appbarLayout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/activity_qq_card_message_et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="请输入卡片标题"
+                app:met_clearButton="true"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="Card Title"
+                app:met_baseColor="#3b3b3b"
+                app:met_primaryColor="#5dd1ff"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/activity_qq_card_message_et_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="请输入卡片描述"
+                app:met_clearButton="true"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="card describe"
+                app:met_baseColor="#3b3b3b"
+                app:met_primaryColor="#5dd1ff"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/activity_qq_card_message_et_imgUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="请输入图片链接"
+                app:met_clearButton="true"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="image url"
+                app:met_baseColor="#3b3b3b"
+                app:met_primaryColor="#5dd1ff"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/activity_qq_card_message_et_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="请输入点击后的链接"
+                app:met_clearButton="true"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="click link"
+                app:met_baseColor="#3b3b3b"
+                app:met_primaryColor="#5dd1ff"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <Button
+                    android:id="@+id/activity_qq_card_message_btn_makeJIaquan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="加群恶搞"
+                    android:background="@drawable/bg_btn_blue"
+                    android:textColor="#ffffff"/>
+
+                <Button
+                    android:id="@+id/activity_qq_card_message_btn_makeWangJIng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_btn_red"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="网警恶搞"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <Button
+                android:id="@+id/activity_qq_card_message_btn_makehongBao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_border_blue"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="红包恶搞"
+                android:textColor="#5Cb0CA"/>
+
+            <Button
+                android:id="@+id/activity_qq_card_message_btn_makePianzan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="骗赞恶搞"
+                android:background="@drawable/bg_border_blue"
+                android:textColor="#5Cb0CA"/>
+        </LinearLayout>
+            <Button
+                android:id="@+id/activity_qq_card_message_btn_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_border_blue"
+                android:text="一键发送"
+                android:textColor="#5Cb0CA"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

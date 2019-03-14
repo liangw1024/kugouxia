@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liangwei.kugouxia.ui.activity.tools.AnalogVideoCall.AnalogVideoCallActivity">
+
+    <com.liangwei.kugouxia.frame.CustomView.VideoBackgroundView
+        android:id="@+id/activity_analog_video_call_videobg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </com.liangwei.kugouxia.frame.CustomView.VideoBackgroundView>
+
+    <TextView
+        android:id="@+id/activity_analog_video_call_tv_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/activity_analog_video_call_imgs"
+        android:layout_centerHorizontal="true"
+        android:text="00:01"
+        android:textColor="#ffffff"/>
+    <RelativeLayout
+        android:id="@+id/activity_analog_video_call_imgs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp">
+
+        <ImageView
+            android:id="@+id/activity_analog_video_call_back"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:src="@mipmap/ic_video_call_back" />
+
+
+        <ImageView
+            android:id="@+id/activity_analog_video_call_close"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_video_call_close" />
+
+
+        <ImageView
+            android:id="@+id/activity_analog_video_call_switch"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:src="@mipmap/ic_video_call_switch" />
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_analog_video_call_back"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/activity_analog_video_call_back"
+                android:text="切换到语音通话"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_analog_video_call_close"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="挂断"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_analog_video_call_switch"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="转换摄像头"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

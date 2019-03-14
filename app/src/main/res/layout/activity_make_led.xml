@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_make_led_appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_make_led_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:background="@color/colorPrimary"
+            android:fitsSystemWindows="true"
+            app:title="LED字幕生成"
+            app:titleTextColor="#ffffff"
+            app:subtitle="只期待后来的你能快乐"
+            app:navigationIcon="@mipmap/ic_back_white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.liangwei.kugouxia.frame.CustomView.MoveTextView
+        android:id="@+id/activity_make_Led_tv_showText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_make_led_appbarlayout"
+        android:layout_marginTop="20dp"
+        app:mtv_text="我有一段向往的爱情，曾经为了追一个女孩，我想入侵www.love520.com高调对她表白，只不过，这一切就是一场梦，梦醒后，我才知道黑客是不需要爱情的"
+        app:mtv_textColor="#5e5e5e"
+        app:mtv_textSize="30"
+        app:mtv_speed="5"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/activity_make_Led_cardView_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/activity_make_Led_tv_showText"
+        android:alpha="50"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="18px"
+        app:cardBackgroundColor="#ffffff">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/activity_make_led_et_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:hint="请输入要显示的内容"
+            app:met_clearButton="true"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="显示内容"
+            app:met_baseColor="#3b3b3b"
+            app:met_primaryColor="#5dd1ff"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/activity_make_Led_seekbar_textSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_make_led_et_text"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:max="1000"
+                android:progress="500" />
+            <TextView
+                android:id="@+id/activity_make_Led_tv_textSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_make_Led_seekbar_textSize"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="textSize Value"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/activity_make_Led_seekbar_textMoveSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_make_Led_seekbar_textSize"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:max="100"
+                android:progress="10" />
+            <TextView
+                android:id="@+id/activity_make_Led_tv_textMovespeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_make_Led_seekbar_textMoveSpeed"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="moveSpeed Value"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/activity_make_Led_btn_setColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_make_Led_cardView_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/bg_btn_tool"
+        android:text="设置颜色" />
+
+    <Button
+        android:id="@+id/activity_make_Led_btn_make"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_make_Led_btn_setColor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/bg_btn_tool"
+        android:text="生成" />
+
+</RelativeLayout>

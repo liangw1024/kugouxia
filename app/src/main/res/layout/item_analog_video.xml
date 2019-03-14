@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="7dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_analog_video_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <ImageView
+                android:id="@+id/item_analog_video_iv"
+                android:layout_width="100dp"
+                android:layout_height="160dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY" />
+            <TextView
+                android:id="@+id/item_analog_video_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_analog_video_iv"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_centerHorizontal="true"
+                android:text="titel"
+                android:textColor="#484848"
+                android:textSize="6pt"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c6c6c6"
+        android:layout_below="@id/item_analog_video_card"
+        android:layout_marginTop="5dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:overScrollMode="ifContentScrolls">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f3f3f3">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/fragment_acrostic_et_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="5.0"
+            android:hint="请输入1-8个汉字"
+            android:maxLines="1"
+            app:met_clearButton="true"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="请输入文字" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fragment_acrostic_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_acrostic_et_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            app:cardCornerRadius="18dp">
+
+            <androidx.percentlayout.widget.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:id="@+id/fragment_acrostic_rb_HowWord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_fiveWord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="五言" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_sevenWord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="七言" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/fragment_acrostic_rb_HowPosition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fragment_acrostic_rb_HowWord"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="藏头" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_foot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="藏尾" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="藏中" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_incrementing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="递增" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_diminishing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="递减" />
+                </RadioGroup>
+
+
+                <RadioGroup
+                    android:id="@+id/fragment_acrostic_rb_HowRhyme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fragment_acrostic_rb_HowPosition"
+                    android:orientation="horizontal">>
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_DoubleSentenceFormOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="双句一押" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_DoubleSentence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="双句押韵" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fragment_acrostic_rb_OneThreeFour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="一三四押" />
+                </RadioGroup>
+
+            </androidx.percentlayout.widget.PercentRelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/fragment_acrostic_btnMake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_acrostic_cardView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1.0"
+            android:background="@drawable/bg_btn_red"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="MAKE"
+            android:textColor="#ffffff" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_acrostic_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/fragment_acrostic_btnMake"
+            android:layout_marginTop="20dp"
+            android:background="#f3f3f3">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+</ScrollView>

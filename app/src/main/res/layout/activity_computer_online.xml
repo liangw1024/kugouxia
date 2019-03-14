@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_computer_online_appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_computer_online_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ProgressBar
+        android:id="@+id/activity_computer_online_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/activity_computer_online_appbarlayout"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/activity_computer_online_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_computer_online_progressbar">
+    </com.tencent.smtt.sdk.WebView>
+
+</RelativeLayout>
+
+

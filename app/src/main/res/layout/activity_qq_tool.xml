@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activity_online_celebrity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:navigationIcon="@mipmap/ic_back_white"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="QQ工具"
+        app:titleTextColor="#ffffff"
+        android:fitsSystemWindows="true"/>
+    <RelativeLayout
+        android:id="@+id/activity_online_celebrity_relativelayout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_online_celebrity_toolbar"
+        android:background="@color/colorPrimary">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="100dp"
+            app:cardBackgroundColor="#58b4ff"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="13dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.liangwei.kugouxia.frame.CustomView.CircleImageView
+                    android:id="@+id/activity_online_celebrity_iv_logo"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/app_logo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/activity_online_celebrity_iv_logo"
+                    android:text="Lw Studio"
+                    android:textColor="#ffffff" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/activity_online_celebrity_iv_logo"
+                    android:text="因为有你所以精彩"
+                    android:textColor="#297ec3" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_online_celebrity_relativelayout_top"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_qq_tool_btn_concise_visitingCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_qq_visiting_card"
+                app:tb_text="QQ简约名片"
+                app:tb_textColor="#2cb5ff" />
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_qq_tool_btn_qqcardmsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_qq_card_msg"
+                app:tb_text="QQ消息恶搞"
+                app:tb_textColor="#ea6868" />
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_qq_tool_btn_svip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_qq_online_computer"
+                app:tb_text="QQ刷永久svip"
+                app:tb_textColor="#f40000" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_qq_tool_btn_forceContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_qq_force_chat"
+                app:tb_text="QQ强制聊天"
+                app:tb_textColor="#f40000" />
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_qq_tool_btn_levelSpeedUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_qq_level_speed_up"
+                app:tb_text="QQ等级加速0.2天"
+                app:tb_textColor="#f40000" />
+
+            <com.liangwei.kugouxia.frame.CustomView.ToolButton
+                android:id="@+id/activity_qq_tool_btn_switchQzon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                app:tb_image="@mipmap/ic_qq_switch_qzone"
+                app:tb_text="开关QQ空间"
+                app:tb_textColor="#f40000" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#c0c0c0"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/activity_qq_tool_card_makeNetName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#1fd449">
+            <RelativeLayout
+                android:id="@+id/activity_qq_tool_makeVipHead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/activity_qq_tool_tv_makeNetName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:text="带V头像制作"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/activity_qq_tool_tv_makeNetName"
+                    android:layout_below="@id/activity_qq_tool_tv_makeNetName"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="-- 让你的QQ 与众不同"
+                    android:textColor="#ffffff"
+                    android:textSize="10dp"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/ic_special_net_name"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/activity_qq_tool_card_zxing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#ff7159">
+            <RelativeLayout
+                android:id="@+id/activity_qq_tool_get_qq_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/activity_tool_tv_zxing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:text="QQ资料提取"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/activity_tool_tv_zxing"
+                    android:layout_below="@id/activity_tool_tv_zxing"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="-- 不多说了自己理解吧"
+                    android:textColor="#ffffff"
+                    android:textSize="10dp"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/ic_zxing"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
