@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="LwCardButton">
+		<attr name="orientation" format="string"/>
+		<attr name="descriptionText" format="string|reference"/>
+		<attr name="descriptionImage" format="integer|reference"/>
+		<attr name="targetImage" format="integer|reference"/>
+		<attr name="divisionImage" format="integer|reference"/>
+		<attr name="descriptionTextColor" format="color|reference"/>
+	</declare-styleable>
+
+	<declare-styleable name="AdScroolbar">
+		<attr name="ad_scroolbar_switchoverIntervalTime" format="integer|reference"/>
+		<attr name="ad_scroolbar_scroolTime" format="integer|reference"/>
+	</declare-styleable>
+
+	<declare-styleable name="RoundImageView">
+		<attr name="radius" format="integer|reference"/>
+	</declare-styleable>
+
+	<declare-styleable name="FloatingButtonsItem">
+		<attr name="fbi_text" format="string|reference"/>
+		<attr name="fbi_textSize" format="integer|reference|dimension|float"/>
+		<attr name="fbi_textColor" format="color|reference"/>
+		<attr name="fbi_textMarginTop" format="reference|dimension|float"/>
+
+		<attr name="fbi_img" format="reference|integer"/>
+		<attr name="fbi_imgWidth" format="reference|dimension|float"/>
+		<attr name="fbi_imgHeight" format="reference|dimension|float"/>
+
+	</declare-styleable>
+
+</resources>
