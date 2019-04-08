@@ -122,7 +122,7 @@ public class HomeFragment extends Fragment {
        BannerModel.getInstance().request(getActivity(), BannerModel.url, new IModelView<BannerBean>() {
            @Override
            public void success(ArrayList<BannerBean> obj) {
-               Log.d("size", "|||+" + obj.size());
+                Log.d("banner","bannerBeans size:=====>"+obj.size());
                if (bannerBeans.size() != 0) {
                    bannerBeans = obj;
                    List<String> imgs = new ArrayList<>();

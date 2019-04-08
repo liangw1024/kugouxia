@@ -27,15 +27,15 @@ public class AppConfig {
 
     public static class WebAddress{
         //免费视频
-        public static String FREE_VIDEO = "http://www.kuaibo.tw/";
+        public static String FREE_VIDEO = "http://www.52kkpp.com/";
         //免费漫画
-        public static String FREE_CARDOON = "http://shenmanhua.com/";
+        public static String FREE_CARDOON = "http://www.wcmhw.com/";
         //免费小说
-        public static String FREE_NOVEL = "http://m.qulewl.com";
+        public static String FREE_NOVEL = "http://xiaoshuo.woai98k.top";
         //网站制作
-        public static String WEBMAKE = "http://webmake.zlwi.top";
+        public static String WEBMAKE = "http://www.eb89.com";
         //装逼神器
-        public static String ZHUANGBI = "http://zb.chazhi.net";
+        public static String ZHUANGBI = "http://zb.yuanrenbang.com/";
     }
 
 }

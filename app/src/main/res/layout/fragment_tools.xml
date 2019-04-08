@@ -33,7 +33,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="信誉担保: "
+                        android:text="最新通知: "
                         android:textColor="@color/colorPrimary"/>
                     <TextView
                         android:id="@+id/fragment_tools_tv_contact"

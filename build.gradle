@@ -17,9 +17,12 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
+
         maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         maven { url "https://jitpack.io" }
-        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
+
+
         maven { url "https://raw.githubusercontent.com/Pgyer/mvn_repo_pgyer/master" }
 
 

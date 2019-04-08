@@ -103,7 +103,7 @@ public class ToolsFragment extends Fragment {
             public void success(ArrayList<AdBean> obj) {
                 adBeans.addAll(obj);
                 updateAd();
-                Log.d("kgxtest", adBeans.size() + "");
+                Log.d("ad", adBeans.size() + "");
             }
 
             @Override

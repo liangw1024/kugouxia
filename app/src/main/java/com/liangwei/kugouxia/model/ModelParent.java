@@ -10,25 +10,30 @@ import com.liangwei.studio.net.INetCallback;
 import java.util.ArrayList;
 
 
-
+/**
+ *
+ */
 public abstract class ModelParent{
     private IModelView iModelView;
 
     /***
-     * 从网络获取数据然后解析
+     * 向服务器请求数据并做处理
      * @param context
-     * @param url
-     * @param iModelView 处理获取事件
+     * @param url 接口地址
+     * @param iModelView 处理获取事件完成接口
+     * @param iParse
      * @return
      */
     public void request(Context context, String url, IModelView iModelView,IParse iParse) {
         this.iModelView = iModelView;
+        //发起请求
         HttpRequestUtils.postNeedUi((Activity) context, url, new INetCallback() {
             @Override
             public void success(String content) {
-                ArrayList arrayList = parse(content,iParse);
-                Log.d("data", content);
-                iModelView.success(arrayList);
+                //对返回的网络数据进行封装处理
+                ArrayList datas = parse(content,iParse);
+                Log.d("Model", "请求数据成功====>"+content);
+                iModelView.success(datas);
 
             }
             @Override
@@ -37,14 +42,17 @@ public abstract class ModelParent{
             }
         });
     }
+
     public void requestByGet(Context context, String url, IModelView iModelView,IParse iParse) {
         this.iModelView = iModelView;
+        //发起请求
         HttpRequestUtils.getNeedUi((Activity) context, url, new INetCallback() {
             @Override
             public void success(String content) {
-                ArrayList arrayList = parse(content,iParse);
-                Log.d("data", content);
-                iModelView.success(arrayList);
+                //对返回的网络数据进行封装处理
+                ArrayList datas = parse(content,iParse);
+                Log.d("Model", "请求数据成功====>"+content);
+                iModelView.success(datas);
 
             }
             @Override
@@ -54,10 +62,10 @@ public abstract class ModelParent{
         });
     }
     /**
-     * 用户自定义解析方法
-     * 将content解析为一个ArrayList集合
+     * 解析返回的网络数据，并封装成对象处理成一个数组
      */
     public abstract ArrayList parse(String content,IParse parseCallback);
+
     public static interface IParse{
         public void success();
         public void fail(Exception e);

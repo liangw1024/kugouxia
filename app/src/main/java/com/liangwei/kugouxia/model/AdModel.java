@@ -1,12 +1,13 @@
 package com.liangwei.kugouxia.model;
 
-import android.util.Log;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+
+import android.util.Log;
 
 import java.util.ArrayList;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.liangwei.kugouxia.beans.AdBean;
 import com.liangwei.kugouxia.frame.AppConfig;
 
@@ -14,8 +15,7 @@ import com.liangwei.kugouxia.frame.AppConfig;
  * ad Model
  */
 public class AdModel extends ModelParent {
-    public static String adUrl = AppConfig.app_url+"adData.php";
-
+    public static String adUrl = AppConfig.app_url+"index.php?action=2";
     private static AdModel model;
     public static AdModel getInstance(){
         if (model==null){
@@ -26,27 +26,27 @@ public class AdModel extends ModelParent {
         return model;
     }
 
-
-
     @Override
     public ArrayList parse(String content, IParse parseCallback) {
-        ArrayList<AdBean> arrayList = new ArrayList<>();
+        ArrayList<AdBean> datas = new ArrayList<>();
         try{
-            JSONArray jsonArray = JSONArray.parseArray(content);
+            JSONObject json = (JSONObject) JSONObject.parse(content);
+            JSONArray jsonArray = json.getJSONArray("content");
+
             for (int index=0;index<jsonArray.size();index++){
                 JSONObject jsonData = jsonArray.getJSONObject(index);
                 String title = jsonData.getString("title");
                 String description = jsonData.getString("description");
-                String imgUrl = jsonData.getString("img");
-                String clickUrl = jsonData.getString("click");
+                String imgUrl = jsonData.getString("img_url");
+                String clickUrl = jsonData.getString("link");
                 AdBean data = new AdBean(title,description,imgUrl,clickUrl);
-                arrayList.add(data);
+                datas.add(data);
             }
             parseCallback.success();
         }catch (Exception e){
             parseCallback.fail(e);
         }
 
-        return arrayList;
+        return datas;
     }
 }
