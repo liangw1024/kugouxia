@@ -1,15 +1,14 @@
 package com.liangwei.studio.ui;
 
 import android.content.*;
-import androidx.cardview.widget.CardView;
+import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.widget.*;
 import android.view.*;
 import android.util.*;
-import android.content.res.*;
-import android.graphics.drawable.*;
-import android.graphics.*;
-
 import com.liangwei.studio.R;
+import androidx.cardview.widget.CardView;
 
 public class LwCardButton extends RelativeLayout {
     private Context context;

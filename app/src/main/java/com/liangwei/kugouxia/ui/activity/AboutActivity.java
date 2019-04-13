@@ -32,7 +32,7 @@ public class AboutActivity extends BaseActivity {
         PgyFeedback.getInstance().showActivity(this);
     }
     @OnClick(R.id.about_activity_btn_CheckUpdate) public void checkUpdate(){
-        checkUpdate(true);
+        checkUpdate();
     }
     @OnClick(R.id.about_activity_btn_contactMe) public void contactMe(){
         QqUtils.forceChat(AboutActivity.this,"2038542046");

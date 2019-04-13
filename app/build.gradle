@@ -44,7 +44,7 @@ android {
     defaultConfig {
         applicationId "com.liangwei.kugouxia"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "test-1.931 不忘初心"
 //        ndk {

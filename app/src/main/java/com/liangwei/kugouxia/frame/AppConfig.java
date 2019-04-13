@@ -18,7 +18,7 @@ public class AppConfig {
     public static String BAIDU_APP_KEY = "1shHgJyDYqmU2NfE5I88";
     //服务器地址
     public static String app_url = "http://kugouxia.lwstudio.top/";
-    public static String check_update_url = app_url+"api.php?update=kugouxia";
+    public static String check_update_url = app_url+"index.php?action=3";
     //notice
     public static String app_notice = app_url+"notice.php";
 

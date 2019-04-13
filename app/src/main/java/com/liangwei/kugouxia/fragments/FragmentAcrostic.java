@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.show.api.ShowApiRequest;
@@ -19,6 +20,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,32 +44,49 @@ public class FragmentAcrostic extends Fragment {
     private String howRhyme = "1";
     List<String> acrostics = new ArrayList<>();
     @OnClick(R.id.fragment_acrostic_btnMake) public void make(){
-        if(acrostics.size()!=0){
-            acrostics.clear();
-            adapter.notifyDataSetChanged();
-        }
-        WbLoadingDialog wbLoadingDialog = new WbLoadingDialog(getActivity(),"请求中",false);
-        wbLoadingDialog.show();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                ShowApiRequest showApiRequest = (ShowApiRequest) new ShowApiRequest("http://route.showapi.com/950-1", AppConfig.SHOW_API_APP_ID, AppConfig.SHOW_API_APP_SECRET)
-                        .addTextPara("num", howWord)
-                        .addTextPara("type", howPosition)
-                        .addTextPara("yayuntype", howRhyme)
-                        .addTextPara("key", et_text.getText().toString());
-                String res = showApiRequest.post();
-                try {
-                    parseJson(res);
-                    wbLoadingDialog.dismiss();
-                    Log.i("kgx",acrostics.toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    wbLoadingDialog.dismiss();
-                    ToastUtils.ShowToast(getActivity(),"错误："+e.toString());
-                }
+        if(et_text.getText().toString().length()!=0){
+            //判断输入是否有数字
+            Pattern patterIsNumber =  Pattern.compile("[0-9]*");
+            Matcher matcher = patterIsNumber.matcher(et_text.getText().toString());
+            if (matcher.matches()){
+                ToastUtils.ShowToast(getActivity(),"请不要输入数字");
+                return;
             }
-        }).start();
+            //清除数据
+            if(acrostics.size()!=0){
+                acrostics.clear();
+                adapter.notifyDataSetChanged();
+            }
+            WbLoadingDialog wbLoadingDialog = new WbLoadingDialog(getActivity(),"请求中",false);
+            wbLoadingDialog.show();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    ShowApiRequest showApiRequest = (ShowApiRequest) new ShowApiRequest("http://route.showapi.com/950-1", AppConfig.SHOW_API_APP_ID, AppConfig.SHOW_API_APP_SECRET)
+                            .addTextPara("num", howWord)
+                            .addTextPara("type", howPosition)
+                            .addTextPara("yayuntype", howRhyme)
+                            .addTextPara("key", et_text.getText().toString());
+                    String res = showApiRequest.post();
+                    try {
+                        parseJson(res);
+                        wbLoadingDialog.dismiss();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                wbLoadingDialog.dismiss();
+                                ToastUtils.ShowToast(getActivity(),"错误："+e.toString()+"");
+                            }
+                        });
+
+                    }
+                }
+            }).start();
+        }else{
+            ToastUtils.ShowToast(getActivity(),"请输入文字");
+        }
 
 
     }
@@ -157,6 +177,7 @@ public class FragmentAcrostic extends Fragment {
      * @throws JSONException
      */
     private void parseJson(String body) throws JSONException {
+        Log.d("net_data","获取的藏头诗数+++++++"+body);
         JSONObject jsonObject = new JSONObject(body);
         JSONObject jsonObjectBody = jsonObject.getJSONObject("showapi_res_body");
         JSONArray jsonArrayAcrostics = jsonObjectBody.getJSONArray("list");

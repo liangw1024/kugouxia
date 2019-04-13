@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_ios_root"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_ios_dialog_default">
+    <RelativeLayout
+        android:id="@+id/dialog_ios_relativeLayout_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+        <TextView
+            android:id="@+id/dialog_ios_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:text="我一直很爱你"
+            android:textSize="19dp"
+            android:textColor="#6ac6ff"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/dialog_ios_tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_ios_tv_title"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="ios dialog"
+            android:textSize="19dp"
+            android:visibility="gone"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/dialog_ios_tv_description"
+            android:layout_marginTop="20px"
+            android:background="#00505050"/>
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/dialog_ios_iv_head"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/dialog_ios_layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px">
+
+        <Button
+            android:id="@+id/dialog_ios_btn_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="left"
+            android:textSize="23px"
+            android:textColor="#b0fc98"
+            android:visibility="gone"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#ffffff"/>
+        <Button
+            android:id="@+id/dialog_ios_btn_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="center"
+            android:textSize="23px"
+            android:textColor="#5b5b5b"
+            android:visibility="gone"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#ffffff"/>
+        <Button
+            android:id="@+id/dialog_ios_btn_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="right"
+            android:textSize="23px"
+            android:textColor="#fb8b8b"
+            android:visibility="gone"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#ffffff"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

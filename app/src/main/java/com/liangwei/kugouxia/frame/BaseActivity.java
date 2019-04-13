@@ -1,6 +1,6 @@
 package com.liangwei.kugouxia.frame;
 
-        import android.content.Context;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -39,12 +39,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     public ScreenManager screenManager = ScreenManager.getInstance();
     int downX = 0;
     int downY = 0;
-
     int upX = 0;
     int upY = 0;
-
-    private boolean isCheckUpdate = false;
-    private boolean isMustUpdate = false;
 
     public static final String TAG = "kugouxia";
     public boolean isRotateScreen =true; //是否屏幕旋转
@@ -85,33 +81,16 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         screenManager = ScreenManager.getInstance();
-        // 自定义摇一摇的灵敏度，默认为950，数值越小灵敏度越高。
-        PgyFeedbackShakeManager.setShakingThreshold(1000);
-
-        // 以对话框的形式弹出，对话框只支持竖屏
-        PgyFeedbackShakeManager.register(this);
-
-        // 以Activity的形式打开，这种情况下必须在AndroidManifest.xml配置FeedbackActivity
-        // 打开沉浸式,默认为false
-        // FeedbackActivity.setBarImmersive(true);
-        //PgyFeedbackShakeManager.register(MainActivity.this, true); 相当于使用Dialog的方式；
-        PgyFeedbackShakeManager.register(this, false);
 
     }
     @Override
     protected void onPause() {
         super.onPause();
-        PgyFeedbackShakeManager.unregister();
+
     }
 
     public void setIsRotateScreen(boolean b){
         this.isRotateScreen = b;
-    }
-    public void setCheckUpdate(boolean checkUpdate) {
-        isCheckUpdate = checkUpdate;
-    }
-    public void setMustUpdate(boolean mustUpdate) {
-        isMustUpdate = mustUpdate;
     }
 
 
@@ -176,9 +155,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 检测更新
      */
-    boolean updateResult = false;
-    public boolean checkUpdate(boolean isCheckUpdate){
-        if (isCheckUpdate){
+    public void checkUpdate(){
             String currentVersionName = BuildConfig.VERSION_NAME;
             HttpRequestUtils.getNeedUi(this, AppConfig.check_update_url, new INetCallback() {
                 @Override
@@ -192,7 +169,6 @@ public abstract class BaseActivity extends AppCompatActivity {
                             String url = json.getString("url");
                             openUrl(BaseActivity.this,url);
                             ToastUtils.ShowToast(getApplicationContext(),"检测到有新版本，请更新");
-                            updateResult = true;
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -201,13 +177,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
                 @Override
                 public void fail(Exception e, String detail) {
-
+                    showToast(getApplicationContext(),"检查更新失败:"+detail,"long");
                 }
             });
         }
-
-        return updateResult;
-    }
 
 
 

@@ -39,7 +39,6 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
     public void mOncreate() {
         Bmob.initialize(this, AppConfig.BMOB_KEY);
         if(isHasPermission(PERMISSION)){
-
                 timer(KuGouMainActivity.class);
         }else{
             //没有权限 开始请求权限
@@ -63,15 +62,15 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
     //分别返回授权成功和失败的权限
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
-        Log.i(TAG, "获取成功的权限" + perms);
+        Log.d("authority权限", "已经获取到的权限" + perms);
         if(perms.size()==PERMISSION.length){
             startActivity(new Intent(MainActivity.this,KuGouMainActivity.class));
-        }else{
-            new AppSettingsDialog.Builder(this).setRationale("点击确定后找到 权限.. 打开权限开关即可 ").setNegativeButton("取消", new DialogInterface.OnClickListener() {
+        }else{//权限不够
+            new AppSettingsDialog.Builder(this).setRationale("点击确定后找到 ，打开相关权限开关即可 ").setNegativeButton("取消", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     finish();
-                    showToast(getApplicationContext(),"软件没有权限 ，请重新打开 确定","long");
+                    showToast(getApplicationContext(),"软件没有权限 ，请重新打开 。或联系客服QQ：1947504030寻求帮助","long");
                 }
             }).setTitle("请允许所有的权限 才正常运行").build().show();
         }

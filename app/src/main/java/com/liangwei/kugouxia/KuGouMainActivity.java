@@ -37,6 +37,7 @@ public class KuGouMainActivity extends BaseActivity {
     @Titles private static final String[] mTitles = {"主页","QQ套图","工具大全"};
     @SeleIcons private static final int[] normalIcons = {R.mipmap.ic_home,R.mipmap.ic_qq_taotu,R.mipmap.ic_tools_normal};
     @NorIcons private static final int[] selectedIcons = {R.mipmap.ic_home_selected, R.mipmap.ic_qq_taotu_selected,R.mipmap.ic_tools_select};
+    //存放多个界面
     private List<Fragment> fragments = new ArrayList<>();
     @BindView(R.id.activity_kugou_jptabbar) JPTabBar jpTabBar;
     @BindView(R.id.activity_kugou_viewpager) ViewPager viewPager;
@@ -51,7 +52,8 @@ public class KuGouMainActivity extends BaseActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setNavigationBarColor(Color.WHITE);
         }
-        checkUpdate(true);
+        //检查更新
+        checkUpdate();
         QQDialog qqDialog = new QQDialog(KuGouMainActivity.this);
         qqDialog.setTitle("请加入软件bug反馈群  防止软件失效");
         qqDialog.setViewLine(QQDialog.setLineColor.BLUE);

@@ -17,5 +17,5 @@ public interface INetCallback {
      * @param e
      * @param detail 失败原因
      */
-    public void fail(Exception e,String detail);
+    public void fail(Exception e, String detail);
 }

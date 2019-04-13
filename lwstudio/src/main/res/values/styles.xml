@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="IosDialog" parent="Theme.AppCompat.Light">
+        <!--背景颜色及透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--去掉标题-->
+        <item name="windowNoTitle">true</item>
+        <!--半透明-->
+        <item name="android:windowTranslucentStatus">false</item>
+        <!--是否悬浮在activity上面-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--去除边框-->
+        <item name="android:windowFrame">@null</item>
+    </style>
+</resources>
