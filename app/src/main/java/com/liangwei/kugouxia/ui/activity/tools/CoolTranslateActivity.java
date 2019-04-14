@@ -88,11 +88,17 @@ public class CoolTranslateActivity extends BaseActivity {
     }
     //翻译tab
     @OnClick(R.id.activity_cool_translate_fab_translate) public void translate() {
+        //source text
+        String query = et_beforeTranslate.getText().toString();
+        if(query.length()==0){
+            ToastUtils.ShowToast(getApplicationContext(),"你还没输入待翻译的内容");
+            return;
+        }
         loadingDialog = new WbLoadingDialog(CoolTranslateActivity.this);
         loadingDialog.setLoadingText("请求中...");
         loadingDialog.setTouchOutSide(false);
         loadingDialog.show();
-        String query = et_beforeTranslate.getText().toString();
+
         new Thread(new Runnable() {
             @Override
             public void run() {

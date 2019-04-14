@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.liangwei.kugouxia.frame.ToastUtils;
+
 import java.util.List;
 
 /**
@@ -108,8 +110,13 @@ public class QqUtils
      * @param context
      */
     public static void levelSpeedUp(Context context){
-        String url="mqqapi://forward/url?url_prefix=aHR0cDovL3JlYWRlci5zaC52aXAucXEuY29tL2NnaS1iaW4vY29tbW9uX2FzeW5jX2NnaT9nX3RrPTUzODEmcGxhdD0xJnZlcnNpb249Ni42LjYmcGFyYW09JTdCJTIya2V5MCUyMiUzQSU3QiUyMnBhcmFtJTIyJTNBJTdCJTIyYmlkJTIyJTNBMTM3OTI2MDUlN0QlMkMlMjJtb2R1bGUlMjIlM0ElMjJyZWFkZXJfY29tbWVudF9yZWFkX3N2ciUyMiUyQyUyMm1ldGhvZCUyMiUzQSUyMkdldFJlYWRBbGxFbmRQYWdlTXNnJTIyJTdEJTdE";
-        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        try{
+            String url="mqqapi://forward/url?url_prefix=aHR0cDovL3JlYWRlci5zaC52aXAucXEuY29tL2NnaS1iaW4vY29tbW9uX2FzeW5jX2NnaT9nX3RrPTUzODEmcGxhdD0xJnZlcnNpb249Ni42LjYmcGFyYW09JTdCJTIya2V5MCUyMiUzQSU3QiUyMnBhcmFtJTIyJTNBJTdCJTIyYmlkJTIyJTNBMTM3OTI2MDUlN0QlMkMlMjJtb2R1bGUlMjIlM0ElMjJyZWFkZXJfY29tbWVudF9yZWFkX3N2ciUyMiUyQyUyMm1ldGhvZCUyMiUzQSUyMkdldFJlYWRBbGxFbmRQYWdlTXNnJTIyJTdEJTdE";
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        }catch (Exception e){
+            ToastUtils.ShowToast(context,"你还没有安装QQ");
+        }
+
     }
     /**
      *QQ请求接口

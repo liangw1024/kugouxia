@@ -212,7 +212,6 @@ public class QqTaoTuFragment extends Fragment {
                 QqTaoTuFragment.this.qqCards.addAll(obj);
                 adapter.notifyDataSetChanged();
                 lRecyclerView.refreshComplete(qqCards.size());
-                QQToast.makeText(getActivity(),"kkk" ,QQToast.setBackgroundColors.WHITE ).show();
                 pageNum+=1;
             }
             @Override

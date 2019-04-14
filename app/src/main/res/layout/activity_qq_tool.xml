@@ -141,7 +141,7 @@
             android:background="#c0c0c0"/>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/activity_qq_tool_card_makeNetName"
+            android:id="@+id/activity_qq_tool_card_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -150,26 +150,26 @@
             app:cardCornerRadius="10dp"
             app:cardBackgroundColor="#1fd449">
             <RelativeLayout
-                android:id="@+id/activity_qq_tool_makeVipHead"
+                android:id="@+id/activity_qq_tool_relativeLayout_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/activity_qq_tool_tv_makeNetName"
+                    android:id="@+id/activity_qq_tool_tv_qPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="15dp"
-                    android:text="带V头像制作"
+                    android:text="QQ号码估价"
                     android:textColor="#ffffff"
                     android:textSize="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/activity_qq_tool_tv_makeNetName"
-                    android:layout_below="@id/activity_qq_tool_tv_makeNetName"
+                    android:layout_alignLeft="@id/activity_qq_tool_tv_qPrice"
+                    android:layout_below="@id/activity_qq_tool_tv_qPrice"
                     android:layout_marginTop="2dp"
                     android:layout_marginLeft="20dp"
-                    android:text="-- 让你的QQ 与众不同"
+                    android:text="-- 快看看你的QQ号码能值多少钱"
                     android:textColor="#ffffff"
                     android:textSize="10dp"/>
                 <ImageView
@@ -184,7 +184,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/activity_qq_tool_card_zxing"
+            android:id="@+id/activity_qq_tool_card_gift"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -193,26 +193,26 @@
             app:cardCornerRadius="10dp"
             app:cardBackgroundColor="#ff7159">
             <RelativeLayout
-                android:id="@+id/activity_qq_tool_get_qq_info"
+                android:id="@+id/activity_qq_tool_relativeLayout_gift"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/activity_tool_tv_zxing"
+                    android:id="@+id/activity_tool_tv_gift"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="15dp"
-                    android:text="QQ资料提取"
+                    android:text="腾讯游戏礼包"
                     android:textColor="#ffffff"
                     android:textSize="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/activity_tool_tv_zxing"
-                    android:layout_below="@id/activity_tool_tv_zxing"
+                    android:layout_alignLeft="@id/activity_tool_tv_gift"
+                    android:layout_below="@id/activity_tool_tv_gift"
                     android:layout_marginTop="2dp"
                     android:layout_marginLeft="20dp"
-                    android:text="-- 不多说了自己理解吧"
+                    android:text="-- 来自友军提供的软件 一键领取礼包"
                     android:textColor="#ffffff"
                     android:textSize="10dp"/>
                 <ImageView
@@ -222,7 +222,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/ic_zxing"/>
+                    android:scaleX="1.4"
+                    android:scaleY="1.4"
+                    android:background="@mipmap/ic_gift"/>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 

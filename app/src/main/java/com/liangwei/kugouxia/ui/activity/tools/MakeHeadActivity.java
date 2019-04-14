@@ -2,7 +2,11 @@ package com.liangwei.kugouxia.ui.activity.tools;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
+
+import androidx.appcompat.widget.AppCompatSeekBar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
@@ -10,6 +14,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.tencent.qq.widget.QQToast;
@@ -34,11 +39,10 @@ public class MakeHeadActivity extends BaseActivity{
     @BindView(R.id.activity_make_head_toolbar) Toolbar toolbar;
     @BindView(R.id.activity_make_head_iv_show) ImageView iv_show;
     @BindView(R.id.activity_make_head_et_text) MaterialEditText et_text;
-    @BindView(R.id.activity_make_head_et_textsize) MaterialEditText et_textSize;
+    @BindView(R.id.activity_make_head_seekbar_size) AppCompatSeekBar seekbar_size;
     @BindView(R.id.activity_make_rv_demo) RecyclerView rv_demo;
     //image data
     private List<Bitmap> images = new ArrayList<>();
-
     @OnClick(R.id.activity_make_head_btn_save) public void clickSave(){
         if(makeedBitmap==null){
             QQToast.makeText(getApplicationContext(),"请先生成图片", QQToast.setBackgroundColors.DEFAULT).show();
@@ -59,20 +63,48 @@ public class MakeHeadActivity extends BaseActivity{
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
-
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 //修改bitmap后 显示到iv_show
                 String text = et_text.getText().toString();
-                makeedBitmap = BitmapUtils.createWatermark(bitmap,et_text.getText().toString(),Integer.valueOf(et_textSize.getText().toString()));
+                if(seekbar_size.getProgress()<10){
+                    makeedBitmap = BitmapUtils.createWatermark(bitmap,et_text.getText().toString(),20);
+
+                }else{
+                    makeedBitmap = BitmapUtils.createWatermark(bitmap,et_text.getText().toString(),seekbar_size.getProgress());
+
+                }
                 iv_show.setImageBitmap(makeedBitmap);
             }
-
             @Override
             public void afterTextChanged(Editable editable) {
 
             }
         });
+        seekbar_size.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //修改bitmap后 显示到iv_show
+                String text = et_text.getText().toString();
+                makeedBitmap = BitmapUtils.createWatermark(bitmap,et_text.getText().toString(),seekbar_size.getProgress());
+                iv_show.setImageBitmap(makeedBitmap);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+        //设置滑块颜色
+        seekbar_size.getThumb().setColorFilter(Color.parseColor("#2CCA33"), PorterDuff.Mode.SRC_ATOP);
+        seekbar_size.getProgressDrawable().setColorFilter(Color.parseColor("#7FFF82"), PorterDuff.Mode.SRC_ATOP);
         images.add(BitmapFactory.decodeResource(getResources(),R.mipmap.head_red));
         images.add(BitmapFactory.decodeResource(getResources(),R.mipmap.head_pink));
         images.add(BitmapFactory.decodeResource(getResources(),R.mipmap.head_green));
@@ -94,7 +126,7 @@ public class MakeHeadActivity extends BaseActivity{
             public void click(List<Bitmap> bs,int position) {
                 iv_show.setImageBitmap(bs.get(position));
                 bitmap = bs.get(position);
-                makeedBitmap = BitmapUtils.createWatermark(bitmap,et_text.getText().toString(),Integer.valueOf(et_textSize.getText().toString()));
+                makeedBitmap = BitmapUtils.createWatermark(bitmap,et_text.getText().toString(),seekbar_size.getProgress());
                 iv_show.setImageBitmap(makeedBitmap);
             }
 

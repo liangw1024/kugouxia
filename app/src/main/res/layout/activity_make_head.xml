@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#fff">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/activity_make_head_appbarlayout"
@@ -30,6 +31,7 @@
        android:layout_centerHorizontal="true"
        android:layout_width="110dp"
        android:layout_height="110dp" />
+
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/activity_make_head_et_text"
         android:layout_below="@id/activity_make_head_iv_show"
@@ -44,22 +46,30 @@
         app:met_floatingLabelText="文字"
         app:met_baseColor="#3b3b3b"
         app:met_primaryColor="#5dd1ff"/>
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/activity_make_head_et_textsize"
-        android:layout_below="@id/activity_make_head_et_text"
+
+    <LinearLayout
+        android:id="@+id/activity_make_head_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="10dp"
-        android:hint="请输入文字大小 默认60"
-        android:text="60"
-        app:met_clearButton="true"
-        app:met_floatingLabel="highlight"
-        app:met_floatingLabelText="Text Size"
-        app:met_baseColor="#3b3b3b"
-        app:met_primaryColor="#5dd1ff"/>
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
 
+        android:layout_below="@id/activity_make_head_et_text">
+        <TextView
+            android:id="@+id/activity_make_head_tv_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="文字大小:"
+            android:textColor="@color/colorPrimary" />
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/activity_make_head_seekbar_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="80"
+            android:progress="30" />
+    </LinearLayout>
 
 
 
@@ -67,7 +77,7 @@
         android:id="@+id/activity_make_head_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/activity_make_head_et_textsize"
+        android:layout_below="@id/activity_make_head_ll"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
         <Button

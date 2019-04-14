@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/activity_cool_translate_toolbar"
             android:layout_width="match_parent"
@@ -22,8 +21,8 @@
             app:title="一个酷译"
             app:titleTextColor="#ffffff"
             android:fitsSystemWindows="true"/>
-
     </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/activity_cool_translate_cardview"
         android:layout_width="match_parent"
@@ -33,7 +32,6 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
         app:cardCornerRadius="18dp"
-
         android:elevation="0dp">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -52,10 +50,11 @@
                 app:met_floatingLabelText="文本"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
     <RelativeLayout
         android:id="@+id/activity_cool_translate_relativeLayout"
         android:layout_width="wrap_content"
-        app:layout_heightPercent="10%"
+        android:layout_height="wrap_content"
         android:layout_below="@id/activity_cool_translate_cardview"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
@@ -65,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:paddingLeft="45dp"
             android:paddingRight="45dp"
             android:background="@drawable/bg_btn_blue"
@@ -73,25 +73,28 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/activity_cool_translate_fab_translate"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:src="@mipmap/ic_translate"
             app:backgroundTintMode="src_atop"
-            app:backgroundTint="#dc2eafff"/>
+            app:backgroundTint="#dc2eafff" />
 
         <Button
             android:id="@+id/activity_cool_translate_btn_BehideTranslateLanguage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
             android:paddingLeft="45dp"
             android:paddingRight="45dp"
             android:background="@drawable/bg_btn_red"
             android:text="中文"
             android:textColor="#ffffff"/>
     </RelativeLayout>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/activity_cool_translate_cardview_Translate"

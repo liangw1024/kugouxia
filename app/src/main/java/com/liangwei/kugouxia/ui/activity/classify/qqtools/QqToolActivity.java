@@ -109,11 +109,11 @@ public class QqToolActivity extends BaseActivity {
         });
         b.show();
     }
-    @OnClick(R.id.activity_qq_tool_makeVipHead) public void vipHead(){
-        developing(findViewById(R.id.activity_qq_tool_btn_concise_visitingCard));
+    @OnClick(R.id.activity_qq_tool_card_price) public void qNumPrice(){
+        openUrl(this,"http://qnum.lwstudio.top");
     }
-    @OnClick(R.id.activity_qq_tool_get_qq_info) public void getQqInfo(){
-        developing(findViewById(R.id.activity_qq_tool_btn_concise_visitingCard));
+    @OnClick(R.id.activity_qq_tool_card_gift) public void gameGift(){
+        openUrl(this,"http://www.coolapk.com/apk/com.mengtaowangluo");
     }
 
 

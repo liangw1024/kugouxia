@@ -92,7 +92,8 @@
             android:name="com.liangwei.kugouxia.ui.activity.tools.MakeHeadActivity"
             android:label="@string/title_activity_make_head"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true"/>
 
 
         <service
@@ -195,7 +196,8 @@
         <activity
             android:name="com.liangwei.kugouxia.ui.activity.tools.CoolTranslateActivity"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true"/>
         <activity
             android:name="com.liangwei.kugouxia.ui.activity.classify.OnlineCelebrityActivity"
             android:label="@string/title_activity_online_celebrity"
